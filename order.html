@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>สั่งซื้อสินค้า | Pawfect Bites</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a href="index.html" class="logo">Pawfect Bites</a>
+      <nav class="nav-links">
+        <a href="index.html#formulas">สูตรสุขภาพ</a>
+        <a href="product.html">เมนูขนม</a>
+        <a href="index.html#contact">ติดต่อสั่งซื้อ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container" style="max-width: 640px;">
+
+        <div class="text-center">
+          <span class="eyebrow">ขั้นตอนสุดท้าย</span>
+          <h1>ยืนยันคำสั่งซื้อ</h1>
+          <p style="margin-inline:auto;">
+            กรอกข้อมูลติดต่อของคุณ ทีมงาน Pawfect Bites จะติดต่อกลับเพื่อยืนยันออเดอร์
+          </p>
+        </div>
+
+        <form id="orderForm" class="card" novalidate>
+
+          <div class="field">
+            <label for="customerName">ชื่อลูกค้า</label>
+            <input type="text" id="customerName" name="customerName" required placeholder="ชื่อ-นามสกุล">
+          </div>
+
+          <div class="field">
+            <label for="contact">เบอร์โทร / Line</label>
+            <input type="text" id="contact" name="contact" required placeholder="เบอร์โทรศัพท์ หรือ Line ID">
+          </div>
+
+          <div class="field">
+            <label for="items">รายการสินค้า</label>
+            <input type="text" id="items" name="items" required readonly>
+            <p class="field-hint">รายการสินค้าจะถูกเติมอัตโนมัติจากหน้าเมนู</p>
+          </div>
+
+          <div class="field">
+            <label for="total">จำนวนเงินรวม (บาท)</label>
+            <input type="text" id="total" name="total" required readonly>
+          </div>
+
+          <div class="field">
+            <label for="note">หมายเหตุเพิ่มเติม</label>
+            <textarea id="note" name="note" rows="3" placeholder="เช่น วันเวลาที่สะดวกให้ติดต่อกลับ"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn--cta" style="width:100%;">ยืนยันการสั่งซื้อ</button>
+
+        </form>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="contact">
+    <div class="container site-footer__inner">
+      <div>
+        <p style="color:inherit; opacity:0.85;">Pawfect Bites</p>
+        <p style="color:inherit; opacity:0.6;">ขนมและอาหารสุนัขโฮมเมด Human-Grade</p>
+      </div>
+      <div>
+        <p style="color:inherit; opacity:0.85;">สั่งซื้อ / สอบถาม</p>
+        <a href="#">Line OA: @pawfectbites</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

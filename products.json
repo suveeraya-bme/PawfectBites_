@@ -1,0 +1,102 @@
+[
+  {
+    "id": "digestive-chicken-pumpkin-s",
+    "name": "อกไก่อบกรอบฟักทอง",
+    "mood": "digestive",
+    "type": "snack",
+    "size": "50g",
+    "price": 89,
+    "image": "images/digestive.jpg",
+    "description": "อกไก่อบกรอบผสมฟักทอง เคี้ยวง่าย ย่อยง่าย เหมาะเป็นขนมให้รางวัลระหว่างวัน"
+  },
+  {
+    "id": "digestive-chicken-pumpkin-l",
+    "name": "อกไก่อบกรอบฟักทอง",
+    "mood": "digestive",
+    "type": "snack",
+    "size": "120g",
+    "price": 189,
+    "image": "images/digestive.jpg",
+    "description": "ไซส์ใหญ่คุ้มค่า อกไก่อบกรอบผสมฟักทอง ดีต่อระบบย่อยอาหาร ท้องไม่อืด"
+  },
+  {
+    "id": "skin-salmon-s",
+    "name": "แซลมอนอบแห้งบำรุงขน",
+    "mood": "skin",
+    "type": "snack",
+    "size": "40g",
+    "price": 99,
+    "image": "images/skin.jpg",
+    "description": "แซลมอนแท้อบแห้งเก็บคุณค่าครบ อุดมโอเมก้า 3 เพื่อขนสวยเงางาม"
+  },
+  {
+    "id": "skin-salmon-l",
+    "name": "แซลมอนอบแห้งบำรุงขน",
+    "mood": "skin",
+    "type": "snack",
+    "size": "100g",
+    "price": 219,
+    "image": "images/skin.jpg",
+    "description": "ไซส์ใหญ่คุ้มค่า แซลมอนอบแห้งบำรุงขนและผิวหนังให้แข็งแรงจากภายใน"
+  },
+  {
+    "id": "energy-beef-liver-s",
+    "name": "เนื้อวัวอบกรอบผสมตับ",
+    "mood": "energy",
+    "type": "snack",
+    "size": "50g",
+    "price": 109,
+    "image": "images/energy.jpg",
+    "description": "โปรตีนคุณภาพสูงจากเนื้อวัวแท้ผสมตับไก่ เติมพลังให้น้องหมาสดใสมีชีวิตชีวา"
+  },
+  {
+    "id": "energy-beef-liver-l",
+    "name": "เนื้อวัวอบกรอบผสมตับ",
+    "mood": "energy",
+    "type": "snack",
+    "size": "120g",
+    "price": 239,
+    "image": "images/energy.jpg",
+    "description": "ไซส์ใหญ่เต็มอิ่ม เสริมพลังงานและกล้ามเนื้อให้น้องหมาคึกคักตลอดวัน"
+  },
+  {
+    "id": "relax-cheese-stick-s",
+    "name": "สติ๊กชีสผ่อนคลาย",
+    "mood": "relax",
+    "type": "snack",
+    "size": "50g",
+    "price": 89,
+    "image": "images/relax.jpg",
+    "description": "สติ๊กชีสหนังสัตว์ธรรมชาติ เคี้ยวเพลิน ช่วยให้น้องหมาผ่อนคลายและมีความสุข"
+  },
+  {
+    "id": "relax-cheese-stick-l",
+    "name": "สติ๊กชีสผ่อนคลาย",
+    "mood": "relax",
+    "type": "snack",
+    "size": "120g",
+    "price": 189,
+    "image": "images/relax.jpg",
+    "description": "ไซส์ยาวเคี้ยวได้นาน เหมาะเป็นของเล่นเสริมความเพลิดเพลินและลดความเครียด"
+  },
+  {
+    "id": "skin-salmon-cookie",
+    "name": "คุกกี้แซลมอนบิสกิต",
+    "mood": "skin",
+    "type": "cake",
+    "size": null,
+    "price": 149,
+    "image": "images/skin.jpg",
+    "description": "คุกกี้อบกรอบรสแซลมอน หอมอร่อย พร้อมคุณประโยชน์เพื่อขนและผิวหนังที่แข็งแรง"
+  },
+  {
+    "id": "digestive-liver-cake",
+    "name": "เค้กตับไก่โฮมเมด",
+    "mood": "digestive",
+    "type": "cake",
+    "size": null,
+    "price": 149,
+    "image": "images/digestive.jpg",
+    "description": "เค้กตับไก่เนื้อนุ่มโฮมเมด อร่อยถูกปาก ช่วยให้ระบบย่อยอาหารทำงานได้ดีขึ้น"
+  }
+]
