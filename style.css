@@ -1,0 +1,426 @@
+/* ==========================================================================
+   Pawfect Bites — Shared Design System
+   โทน: ครีม-เบจ-ส้มอิฐอ่อน พรีเมียม อบอุ่น มินิมอล
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Nunito+Sans:wght@400;500;600;700;800&display=swap');
+
+/* -------------------------------------------------------------------------
+   1. Design Tokens
+   ------------------------------------------------------------------------- */
+:root {
+  /* Core palette — 60/30/10 */
+  --color-bg: #FBF6EF;            /* 60% พื้นหลังหลัก: ครีมอุ่น */
+  --color-secondary: #EFE1CC;     /* 30% พื้นรอง: การ์ด/เบจเข้มขึ้น */
+  --color-secondary-soft: #F5EBDA;/* เบจอ่อนสำหรับ stripe/section คั่น */
+  --color-cta: #935B34;           /* 10% ปุ่ม CTA: น้ำตาลอุ่น */
+  --color-cta-hover: #7A4A29;
+
+  /* Brick accent เสริม (ใช้เบา ๆ เป็นเส้นขอบ/ไฮไลต์ ไม่ใช่พื้นหลังหลัก) */
+  --color-brick: #C97B5A;
+  --color-brick-soft: #EFC9B4;
+
+  /* Text */
+  --color-text: #3A2C22;          /* น้ำตาลเข้มอมดำ แทนสีดำล้วน */
+  --color-text-muted: #6E5D4E;
+  --color-text-on-cta: #FBF6EF;
+
+  /* Mood accents — ใช้เป็นแท็กจัดกลุ่มสูตรสุขภาพ ไม่ใช่สีพื้นหลักของหน้า */
+  --mood-skin: #D98A6B;      /* บำรุงขน/ผิว — โทนแซลมอน */
+  --mood-skin-bg: #F7E3D8;
+  --mood-digestive: #8A9A6B; /* ย่อยง่าย — โทนเสจอ่อน */
+  --mood-digestive-bg: #E7EBDD;
+  --mood-energy: #B5502C;    /* พลังงาน — โทนอิฐเข้ม */
+  --mood-energy-bg: #F1D9CC;
+  --mood-relax: #8C7A9E;     /* ผ่อนคลาย — โทนลาเวนเดอร์หม่น */
+  --mood-relax-bg: #E9E2EF;
+
+  /* Surfaces & lines */
+  --color-border: #E1D2B8;
+  --color-surface: #FFFFFF;
+
+  /* Typography */
+  --font-display: 'Fraunces', 'Noto Serif Thai', serif;
+  --font-body: 'Nunito Sans', 'Noto Sans Thai', sans-serif;
+
+  --fs-h1: clamp(2.25rem, 1.7rem + 2vw, 3.5rem);
+  --fs-h2: clamp(1.65rem, 1.35rem + 1.1vw, 2.35rem);
+  --fs-h3: clamp(1.25rem, 1.1rem + 0.6vw, 1.55rem);
+  --fs-body: 1rem;
+  --fs-small: 0.875rem;
+
+  /* Spacing scale */
+  --space-1: 0.5rem;
+  --space-2: 0.75rem;
+  --space-3: 1rem;
+  --space-4: 1.5rem;
+  --space-5: 2.5rem;
+  --space-6: 4rem;
+  --space-7: 6rem;
+
+  /* Shape & shadow */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-pill: 999px;
+  --shadow-card: 0 6px 20px rgba(58, 44, 34, 0.08);
+  --shadow-card-hover: 0 10px 28px rgba(58, 44, 34, 0.14);
+
+  --transition-base: 200ms ease;
+}
+
+/* -------------------------------------------------------------------------
+   2. Reset
+   ------------------------------------------------------------------------- */
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; display: block; }
+
+a { color: inherit; text-decoration: none; }
+
+ul, ol { padding: 0; margin: 0; list-style: none; }
+
+button, input, textarea, select { font-family: inherit; font-size: inherit; }
+
+:focus-visible {
+  outline: 3px solid var(--color-cta);
+  outline-offset: 2px;
+}
+
+/* -------------------------------------------------------------------------
+   3. Typography
+   ------------------------------------------------------------------------- */
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--color-text);
+  line-height: 1.2;
+  margin: 0 0 var(--space-3);
+}
+
+h1 { font-size: var(--fs-h1); font-weight: 500; }
+h2 { font-size: var(--fs-h2); }
+h3 { font-size: var(--fs-h3); }
+
+p {
+  margin: 0 0 var(--space-3);
+  max-width: 62ch;
+  color: var(--color-text-muted);
+}
+
+.eyebrow {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: var(--fs-small);
+  color: var(--color-cta);
+  margin-bottom: var(--space-2);
+}
+
+.text-center { text-align: center; }
+.text-center p { margin-left: auto; margin-right: auto; }
+
+/* -------------------------------------------------------------------------
+   4. Layout helpers
+   ------------------------------------------------------------------------- */
+.container {
+  width: 100%;
+  max-width: 1120px;
+  margin-inline: auto;
+  padding-inline: var(--space-4);
+}
+
+.section {
+  padding-block: var(--space-7);
+}
+
+.section--soft {
+  background: var(--color-secondary-soft);
+}
+
+.grid {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.grid-2 { grid-template-columns: repeat(2, 1fr); }
+.grid-3 { grid-template-columns: repeat(3, 1fr); }
+.grid-4 { grid-template-columns: repeat(4, 1fr); }
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.cluster {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+/* -------------------------------------------------------------------------
+   5. Buttons
+   ------------------------------------------------------------------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-1);
+  padding: 0.85rem 1.75rem;
+  border-radius: var(--radius-pill);
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: var(--fs-body);
+  transition: transform var(--transition-base), box-shadow var(--transition-base), background-color var(--transition-base);
+}
+
+.btn--cta {
+  background: var(--color-cta);
+  color: var(--color-text-on-cta);
+  box-shadow: var(--shadow-card);
+}
+
+.btn--cta:hover {
+  background: var(--color-cta-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.btn--outline {
+  background: transparent;
+  color: var(--color-cta);
+  border: 2px solid var(--color-cta);
+}
+
+.btn--outline:hover {
+  background: var(--color-cta);
+  color: var(--color-text-on-cta);
+  transform: translateY(-2px);
+}
+
+.btn--sm {
+  padding: 0.6rem 1.25rem;
+  font-size: var(--fs-small);
+}
+
+/* -------------------------------------------------------------------------
+   6. Header / Nav
+   ------------------------------------------------------------------------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(251, 246, 239, 0.92);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.site-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: var(--space-3);
+}
+
+.logo {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.nav-links {
+  display: flex;
+  gap: var(--space-4);
+}
+
+.nav-links a {
+  font-weight: 600;
+  font-size: var(--fs-small);
+  color: var(--color-text-muted);
+  transition: color var(--transition-base);
+}
+
+.nav-links a:hover { color: var(--color-cta); }
+
+/* -------------------------------------------------------------------------
+   7. Badges / Mood tags
+   ------------------------------------------------------------------------- */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.3rem 0.8rem;
+  border-radius: var(--radius-pill);
+  font-size: var(--fs-small);
+  font-weight: 700;
+}
+
+.badge[data-mood="skin"]      { background: var(--mood-skin-bg);      color: var(--mood-skin); }
+.badge[data-mood="digestive"] { background: var(--mood-digestive-bg); color: var(--mood-digestive); }
+.badge[data-mood="energy"]    { background: var(--mood-energy-bg);    color: var(--mood-energy); }
+.badge[data-mood="relax"]     { background: var(--mood-relax-bg);     color: var(--mood-relax); }
+
+/* -------------------------------------------------------------------------
+   8. Cards (product / value prop / review)
+   ------------------------------------------------------------------------- */
+.card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  box-shadow: var(--shadow-card);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  overflow: hidden;
+  padding: 0 0 var(--space-4);
+}
+
+.product-card__image {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
+  background: var(--color-secondary);
+}
+
+.product-card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.product-card__body {
+  padding-inline: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.product-card__price {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--color-cta);
+}
+
+.value-card {
+  text-align: left;
+}
+
+.value-card__number {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  color: var(--color-brick);
+  margin-bottom: var(--space-1);
+}
+
+.review-card {
+  background: var(--color-secondary-soft);
+  border: none;
+}
+
+/* -------------------------------------------------------------------------
+   9. Forms
+   ------------------------------------------------------------------------- */
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-bottom: var(--space-3);
+}
+
+.field label {
+  font-weight: 700;
+  font-size: var(--fs-small);
+  color: var(--color-text);
+}
+
+.field input,
+.field textarea,
+.field select {
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+  color: var(--color-text);
+  transition: border-color var(--transition-base), box-shadow var(--transition-base);
+}
+
+.field input:focus,
+.field textarea:focus,
+.field select:focus {
+  border-color: var(--color-cta);
+  box-shadow: 0 0 0 3px rgba(147, 91, 52, 0.15);
+  outline: none;
+}
+
+/* -------------------------------------------------------------------------
+   10. Footer
+   ------------------------------------------------------------------------- */
+.site-footer {
+  background: var(--color-text);
+  color: var(--color-bg);
+  padding-block: var(--space-6);
+}
+
+.site-footer a { color: var(--color-bg); opacity: 0.85; }
+.site-footer a:hover { opacity: 1; text-decoration: underline; }
+
+.site-footer__inner {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+}
+
+/* -------------------------------------------------------------------------
+   11. Responsive breakpoints
+   ------------------------------------------------------------------------- */
+@media (max-width: 960px) {
+  .grid-4 { grid-template-columns: repeat(2, 1fr); }
+  .grid-3 { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 640px) {
+  .section { padding-block: var(--space-5); }
+  .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+  .nav-links { display: none; }
+  .site-footer__inner { flex-direction: column; }
+}
